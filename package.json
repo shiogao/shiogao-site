@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "dev": "nuxt",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/markdownit": "^1.2.10",
+    "normalize.css": "^8.0.1",
+    "nuxt": "^2.14.6"
+  }
+}
