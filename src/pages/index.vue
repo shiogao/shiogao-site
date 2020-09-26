@@ -11,6 +11,11 @@
 import { blogs } from "~/contents/index.js";
 import BlogArticle from "~/components/BlogArticle.vue";
 export default {
+  head() {
+    return {
+      title: "Home",
+    };
+  },
   components: {
     BlogArticle,
   },

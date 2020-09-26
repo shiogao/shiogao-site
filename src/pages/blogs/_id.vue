@@ -20,6 +20,11 @@ export default {
       info,
     };
   },
+  head() {
+    return {
+      title: this.info.title,
+    };
+  },
   computed: {
     dateText() {
       let arr = this.info.date.split("-");
