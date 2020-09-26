@@ -28,9 +28,15 @@ export default {
     },
   },
   mounted() {
-    window.addEventListener("scroll", (e) => {
-      this.onScroll(e);
-    });
+    if ("ontouchmove" in window) {
+      window.addEventListener("touchmove", (e) => {
+        this.onScroll(e);
+      });
+    } else {
+      window.addEventListener("scroll", (e) => {
+        this.onScroll(e);
+      });
+    }
   },
 };
 </script>
