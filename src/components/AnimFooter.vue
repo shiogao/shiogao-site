@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="footer-inner">&copy; 2020 shiogao</div>
+    <nuxt-link to="/" class="footer-inner">&copy; 2020 shiogao</nuxt-link>
   </footer>
 </template>
 
@@ -20,5 +20,6 @@ footer {
   font-size: 12pt;
   color: black;
   box-shadow: 0 -10px 10px -16px;
+  text-decoration: none;
 }
 </style>
