@@ -44,38 +44,58 @@ export default {
   box-shadow: 0 10px 10px -16px;
 }
 .title {
+  display: flex;
   font-size: 32pt;
   color: white;
   text-shadow: 0 0 2px black;
   margin: 5px;
 }
-.title .c0 {
+.c0,
+.c1,
+.c2,
+.c3,
+.c4,
+.c5,
+.c6 {
+  position: relative;
   display: inline-block;
-  animation: drop 0.2s linear 0s both;
+  margin: 0 5px;
 }
-.title .c1 {
-  display: inline-block;
-  animation: drop 0.2s linear 0.2s both;
+.c0,
+.c1,
+.c2,
+.c3,
+.c5,
+.c6 {
+  animation-name: drop, fadeIn;
+  animation-duration: 0.2s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
 }
-.title .c2 {
-  display: inline-block;
-  animation: drop 0.2s linear 0.4s both;
+.c0 {
+  animation-delay: 0s;
 }
-.title .c3 {
-  display: inline-block;
-  animation: drop 0.2s linear 0.6s both;
+.c1 {
+  animation-delay: 0.2s;
 }
-.title .c4 {
-  display: inline-block;
-  animation: dropG 0.2s linear 0.8s both, rotateG 0.2s ease-in 1.4s both;
+.c2 {
+  animation-delay: 0.4s;
 }
-.title .c5 {
-  display: inline-block;
-  animation: drop 0.2s linear 1s both;
+.c3 {
+  animation-delay: 0.6s;
 }
-.title .c6 {
-  display: inline-block;
-  animation: drop 0.2s linear 1.2s both;
+.c4 {
+  animation-name: drop, fadeIn, rotate;
+  animation-duration: 0.2s;
+  animation-timing-function: linear, linear, ease-out;
+  animation-fill-mode: both;
+  animation-delay: 0.8s, 0.8s, 1.4s;
+}
+.c5 {
+  animation-delay: 1s;
+}
+.c6 {
+  animation-delay: 1.2s;
 }
 .subtitle {
   margin: 5px;
@@ -86,43 +106,14 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: fadeIn 0.5s linear 1.8s both;
+  animation: fadeIn 0.5s ease 1.8s both;
 }
 @keyframes drop {
   0% {
-    transform: translateY(-100px);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(0px);
-  }
-  75% {
-    transform: translateY(-10px);
+    top: -50px;
   }
   100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-@keyframes dropG {
-  0% {
-    transform: translateY(-100px) rotateZ(180deg);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(0px) rotateZ(180deg);
-  }
-  75% {
-    transform: translateY(-10px) rotateZ(180deg);
-  }
-  100% {
-    transform: translateY(0px) rotateZ(180deg);
-    opacity: 1;
-  }
-}
-@keyframes rotateG {
-  100% {
-    transform: translateY(0px) rotateZ(0deg);
+    top: 0px;
   }
 }
 @keyframes fadeIn {
@@ -131,6 +122,14 @@ export default {
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 </style>
