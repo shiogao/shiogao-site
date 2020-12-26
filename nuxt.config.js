@@ -8,6 +8,10 @@ export default {
   modules: [
     '@nuxtjs/markdownit'
   ],
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+  },
   generate: {
     routes() {
       return blogs.map(item => {
